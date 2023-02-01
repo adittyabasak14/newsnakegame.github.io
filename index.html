@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,24 @@
     <title>SnakeMania - Ek Gaming Katha</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="body">
-        <div id="scoreBox">Score: 0</div>
-        <div id="hiscoreBox">HiScore: 0</div>
-        <div id="board"></div>
+    <div class="full-body">
+        <div class="body">
+            <div id="scoreBox">Score: 0</div>
+            <div id="hiscoreBox">HighestScore: 0</div>
+            <div id="board"></div>
+        </div>
+        <div class="button-center-wrapp">
+            <div class="button-wrapp">
+                <button onclick="statbtnup()" class="nameval">up</button>
+                <button onclick="statbtndown()" class="nameval">down</button>
+                <button onclick="statbtnleft()" class="nameval">Left</button>
+                <button onclick="statbtnright()" class="nameval">Right</button>
+            </div>
+        </div>
     </div>
 </body>
 <script src="js/index.js"></script>
+
 </html>
