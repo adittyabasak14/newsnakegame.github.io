@@ -114,10 +114,11 @@ else {
     hiscoreBox.innerHTML = "HighestScore: " + hiscore;
 }
 window.requestAnimationFrame(main);
-inputDir = { x: 0, y: 1 }
+
 
 // for pc
 window.addEventListener('keydown', e => {
+    inputDir = { x: 0, y: 1 }
     // Start the game
     moveSound.play();
     switch (e.key) {
@@ -196,9 +197,8 @@ function savebtncount() {
 }
 // end speed maintain
 
-
-
 // auto click buttons
 savebtncount()
 updateDisplay()
+
 // end auto click buttons
