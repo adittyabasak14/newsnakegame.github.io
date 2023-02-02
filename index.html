@@ -12,18 +12,29 @@
 <body>
     <div class="full-body">
         <div class="body">
-            <div id="scoreBox">Score: 0</div>
-            <div id="hiscoreBox">HighestScore: 0</div>
-            <div id="board"></div>
-        </div>
-        <div class="button-center-wrapp">
-            <div class="button-wrapp">
-                <button onclick="statbtnup()" class="nameval">up</button>
-                <button onclick="statbtndown()" class="nameval">down</button>
-                <button onclick="statbtnleft()" class="nameval">Left</button>
-                <button onclick="statbtnright()" class="nameval">Right</button>
+            <div>
+                <div id="scoreBox">Score: 0</div>
+                <div id="hiscoreBox">HighestScore: 0</div>
+                <div id="board"></div>
+                <div class="count-button">
+                    <h1 class="counter-display" id="countmain"></h1>
+                    <button class="nameval counter-minus">-</button>
+                    <button class="nameval counter-plus">+</button>
+                    <button class="nameval" onclick="savebtncount()">save</button>
+                </div>
+                <div class="button-center-wrapp">
+                    <div class="button-wrapp">
+                        <button onclick="statbtnup()" class="nameval">up</button>
+                        <button onclick="statbtndown()" class="nameval">down</button>
+                        <button onclick="statbtnleft()" class="nameval">Left</button>
+                        <button onclick="statbtnright()" class="nameval">Right</button>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
     </div>
 </body>
 <script src="js/index.js"></script>

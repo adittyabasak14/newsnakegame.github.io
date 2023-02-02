@@ -4,7 +4,7 @@ const foodSound = new Audio('food.mp3');
 const gameOverSound = new Audio('gameover.mp3');
 const moveSound = new Audio('move.mp3');
 const musicSound = new Audio('music.mp3');
-let speed = 5;
+let speed = "";
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [
@@ -13,10 +13,12 @@ let snakeArr = [
 
 food = { x: 6, y: 7 };
 
+
+
+
 // Game Functions
 function main(ctime) {
     window.requestAnimationFrame(main);
-    // console.log(ctime)
     if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
         return;
     }
@@ -111,14 +113,13 @@ else {
     hiscoreval = JSON.parse(hiscore);
     hiscoreBox.innerHTML = "HighestScore: " + hiscore;
 }
-// debugger;
-// var playgame = ""
 window.requestAnimationFrame(main);
+inputDir = { x: 0, y: 1 }
+
+// for pc
 window.addEventListener('keydown', e => {
-    // playgame = e;
-    inputDir = { x: 0, y: 1 } // Start the game
+    // Start the game
     moveSound.play();
-    // debugger;
     switch (e.key) {
         case "ArrowUp":
             console.log("ArrowUp");
@@ -149,40 +150,55 @@ window.addEventListener('keydown', e => {
 
 
 });
-// statbtn()
-// debugger
+// end for pc
 
-// let up = document.getElementById("up");
-// let val = btn.value;
-
-// var getvalueup = ""
-
+// for mobile
 function statbtnup() {
-    // getvalueup = "startgame"
-    // // debugger;
-    // if (getvalueup === "startgame") {
-    //     debugger
-    inputDir = { x: 0, y: 1 }
     inputDir.x = 0;
     inputDir.y = -1;
-    // } else {
-    // }
 }
 function statbtndown() {
-    inputDir = { x: 0, y: 1 }
     inputDir.x = 0;
     inputDir.y = 1;
 }
 function statbtnleft() {
-    inputDir = { x: 0, y: 1 }
     inputDir.x = -1;
     inputDir.y = 0;
 }
 function statbtnright() {
-    inputDir = { x: 0, y: 1 }
     inputDir.x = 1;
     inputDir.y = 0;
 }
+// end for mobile
+
+// speed maintain
+let counterDisplayElem = document.querySelector('.counter-display');
+let counterMinusElem = document.querySelector('.counter-minus');
+let counterPlusElem = document.querySelector('.counter-plus');
+let count = 5;
+
+counterPlusElem.addEventListener("click", () => {
+    count++;
+    updateDisplay();
+});
+
+counterMinusElem.addEventListener("click", () => {
+    count--;
+    updateDisplay();
+});
+
+function updateDisplay() {
+    counterDisplayElem.innerHTML = count;
+    $("#countmain").html(count);
+};
+function savebtncount() {
+    speed = count
+}
+// end speed maintain
 
 
-// document.getElementById("result").innerHTML = "Value of the above button: <b>" + val + "</b>";
+
+// auto click buttons
+savebtncount()
+updateDisplay()
+// end auto click buttons
