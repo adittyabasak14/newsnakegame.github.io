@@ -118,9 +118,10 @@ window.requestAnimationFrame(main);
 
 // for pc
 window.addEventListener('keydown', e => {
-    inputDir = { x: 0, y: 1 }
+    // inputDir = { x: 0, y: 1 }
     // Start the game
     moveSound.play();
+    onmusic()
     switch (e.key) {
         case "ArrowUp":
             console.log("ArrowUp");
@@ -195,10 +196,13 @@ function updateDisplay() {
 function savebtncount() {
     speed = count
 }
+function onmusic() {
+    musicSound.play();
+}
 // end speed maintain
 
 // auto click buttons
 savebtncount()
 updateDisplay()
-
+onmusic()
 // end auto click buttons
